@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 
+import {yariga} from "../assets";
 import {
   PieChart,
   PropertyReferrals,
@@ -19,10 +20,12 @@ const home = () => {
        
     </Typography>
     <Typography fontSize={25} fontWeight={700} color="#11142d">
-                My hobby.
+                My passion
                 </Typography>
     <Box mt="20px" display="flex" flexWrap="wrap" gap={4}>
-
+    <div style={{ maxWidth: '400px', maxHeight: '400px' }}>
+    <img src={yariga} alt="Yariga Logo" style={{ maxWidth: '100%', maxHeight: '100%' }} />
+  </div>
     </Box>
     <Stack
                 mt="25px"

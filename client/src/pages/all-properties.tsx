@@ -36,8 +36,8 @@ const AllProperties = () => {
 
     const currentFilterValues = useMemo(() => {
         const logicalFilters = filters.flatMap((item) =>
-            "field" in item ? item : [],
-        );
+           ( "field" in item ? item : []
+        ));
 
         return {
             title:
@@ -75,7 +75,14 @@ const AllProperties = () => {
                             flexWrap="wrap"
                             mb={{ xs: "20px", sm: 0 }}
                         >
-
+                            <CustomButton
+                                title={`Year ${
+                                    currentPrice === "asc" ? "↑" : "↓"
+                                }`}
+                                handleClick={() => toggleSort("price")}
+                                backgroundColor="#475be8"
+                                color="#fcfcfc"
+                            />
                             <TextField
                                 variant="outlined"
                                 color="info"
