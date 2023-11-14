@@ -89,7 +89,7 @@ const AgentCard = ({
                         {name}
                     </Typography>
                     <Typography fontSize={14} color="#808191">
-                        Real-Estate Team
+                        Site Admin
                     </Typography>
                 </Stack>
                 <Stack
@@ -105,11 +105,11 @@ const AgentCard = ({
                     />
                     <InfoBar
                         icon={<Place sx={{ color: "#808191" }} />}
-                        name="London"
+                        name="Bucharest"
                     />
                     <InfoBar
                         icon={<Phone sx={{ color: "#808191" }} />}
-                        name="+502-3231-4141"
+                        name="+0123456789"
                     />
                     <InfoBar
                         icon={<LocationCity sx={{ color: "#808191" }} />}

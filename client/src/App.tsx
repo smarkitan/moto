@@ -21,6 +21,10 @@ import PeopleAltOutlined from "@mui/icons-material/PeopleAltOutlined";
 import StarOutlineRounded from "@mui/icons-material/StarOutlineRounded";
 import StorefrontOutlinedIcon from '@mui/icons-material/StorefrontOutlined';
 import VillaOutlined from "@mui/icons-material/VillaOutlined";
+import TwoWheelerOutlinedIcon from '@mui/icons-material/TwoWheelerOutlined';
+import SportsMotorsportsOutlinedIcon from '@mui/icons-material/SportsMotorsportsOutlined';
+import DevicesOutlinedIcon from '@mui/icons-material/DevicesOutlined';
+
 
 import dataProvider from "@refinedev/simple-rest";
 import routerProvider from "@refinedev/react-router-v6/legacy";
@@ -144,37 +148,25 @@ function App() {
                     resources={[
                         {
                             name: "properties",
-                            options: { label: "RE Admin" },
+                            options: { label: "My Moto" },
                             list: AllProperties,
                             show: PropertyDetails,
                             create: CreateProperty,
                             edit: EditProperty,
-                            icon: <VillaOutlined />,
+                            icon: <TwoWheelerOutlinedIcon />,
                         },
                         {
                             name: "agents",
-                            options: { label: "RE Team" },
+                            options: { label: "Admin" },
                             list: Agents,
                             show: AgentProfile,
-                            icon: <PeopleAltOutlined />,
-                        },
-                        {
-                            name: "reviews",
-                            options: { label: "Shops" },
-                            list: Home,
-                            icon: <StorefrontOutlinedIcon />,
-                        },
-                        {
-                            name: "messages",
-                            options: { label: "Buildings" },
-                            list: Home,
-                            icon: <CorporateFareOutlined />,
+                            icon: <DevicesOutlinedIcon />,
                         },
                         {
                             name: "my-profile",
                             options: { label: "My Profile " },
                             list: MyProfile,
-                            icon: <AccountCircleOutlined />,
+                            icon: <SportsMotorsportsOutlinedIcon />,
                         },
                     ]}
                     Title={Title}

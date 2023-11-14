@@ -140,7 +140,7 @@ const PropertyDetails = () => {
                                     mt="10px"
                                     color="#11142D"
                                 >
-                                    Monthly Rent & Service Charge
+                                    
                                 </Typography>
                                 <Stack
                                     direction="row"
@@ -152,14 +152,14 @@ const PropertyDetails = () => {
                                         fontWeight={700}
                                         color="#475BE8"
                                     >
-                                        €{propertyDetails.price}
+                                   
                                     </Typography>
                                     <Typography
                                         fontSize={14}
                                         color="#808191"
                                         mb={0.5}
                                     >
-                                        Euro/sqm
+                                        
                                     </Typography>
                                 </Stack>
                             </Box>
@@ -228,7 +228,7 @@ const PropertyDetails = () => {
                                     fontWeight={400}
                                     color="#808191"
                                 >
-                                    FM/PM Manager
+                                  Site Admin
                                 </Typography>
                             </Box>
 
@@ -244,7 +244,7 @@ const PropertyDetails = () => {
                                     fontWeight={400}
                                     color="#808191"
                                 >
-                                    Bucuresti
+                                    Bucharest
                                 </Typography>
                             </Stack>
 
@@ -297,23 +297,7 @@ const PropertyDetails = () => {
                         </Stack>
                     </Stack>
 
-                    <Stack>
-                        <img
-                            src="https://serpmedia.org/scigen/images/googlemaps-nyc-standard.png?crc=3787557525"
-                            width="100%"
-                            height={306}
-                            style={{ borderRadius: 10, objectFit: "cover" }}
-                        />
-                    </Stack>
 
-                    <Box>
-                        <CustomButton
-                            title="floor plan"
-                            backgroundColor="#475BE8"
-                            color="#FCFCFC"
-                            fullWidth
-                        />
-                    </Box>
                 </Box>
             </Box>
         </Box>

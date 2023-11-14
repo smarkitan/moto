@@ -76,7 +76,7 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                                     {name}
                                 </Typography>
                                 <Typography fontSize={16} color="#808191">
-                                    RE Team
+                                    Site Admin
                                 </Typography>
                             </Stack>
 
@@ -100,8 +100,7 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                                             fontSize={14}
                                             color="#11142D"
                                         >
-                                            4517 Washington Ave. Manchaster,
-                                            Kentucky 39495
+                                            Bucharest
                                         </Typography>
                                     </Box>
                                 </Stack>
@@ -171,7 +170,7 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
         {properties.length > 0 && (
             <Box mt={2.5} borderRadius="15px" padding="20px" bgcolor="#FCFCFC">
                 <Typography fontSize={18} fontWeight={600} color="#11142D">
-                    {type} Properties
+                    {type} Motorcycles
                 </Typography>
 
                 <Box
