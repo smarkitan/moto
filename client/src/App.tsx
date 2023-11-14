@@ -66,7 +66,7 @@ function App() {
 
             if (profileObj) {
                 const response = await fetch(
-                    "https://dashed.onrender.com/api/v1/users",
+                    "https://moto-album.onrender.com/api/v1/users",
                     {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
@@ -137,14 +137,14 @@ function App() {
             <GlobalStyles styles={{ html: { WebkitFontSmoothing: "auto" } }} />
             <RefineSnackbarProvider>
                 <Refine
-                    dataProvider={dataProvider("https://dashed.onrender.com/api/v1")}
+                    dataProvider={dataProvider("https://moto-album.onrender.com/api/v1")}
                     notificationProvider={notificationProvider}
                     ReadyPage={ReadyPage}
                     catchAll={<ErrorComponent />}
                     resources={[
                         {
                             name: "properties",
-                            options: { label: "RE Admin" },
+                            options: { label: "My Moto" },
                             list: AllProperties,
                             show: PropertyDetails,
                             create: CreateProperty,
@@ -153,22 +153,10 @@ function App() {
                         },
                         {
                             name: "agents",
-                            options: { label: "RE Team" },
+                            options: { label: "Admin" },
                             list: Agents,
                             show: AgentProfile,
                             icon: <PeopleAltOutlined />,
-                        },
-                        {
-                            name: "reviews",
-                            options: { label: "Shops" },
-                            list: Home,
-                            icon: <StorefrontOutlinedIcon />,
-                        },
-                        {
-                            name: "messages",
-                            options: { label: "Buildings" },
-                            list: Home,
-                            icon: <CorporateFareOutlined />,
                         },
                         {
                             name: "my-profile",

@@ -55,14 +55,10 @@ const PropertyReferrals = () => {
             borderRadius="15px"
         >
             <Typography fontSize={18} fontWeight={600} color="#11142d">
-                CAPEX YTD (%)
+                
             </Typography>
 
-            <Stack my="20px" direction="column" gap={4}>
-                {propertyReferralsInfo.map((bar) => (
-                    <ProgressBar key={bar.title} {...bar} />
-                ))}
-            </Stack>
+
         </Box>
     );
 };

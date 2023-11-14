@@ -69,8 +69,6 @@ const createProperty = async (req, res) => {
             title,
             description,
             propertyType,
-            location,
-            price,
             photo,
             email,
         } = req.body;
@@ -88,8 +86,6 @@ const createProperty = async (req, res) => {
             title,
             description,
             propertyType,
-            location,
-            price,
             photo: photoUrl.url,
             creator: user._id,
         });
@@ -108,7 +104,7 @@ const createProperty = async (req, res) => {
 const updateProperty = async (req, res) => {
     try {
         const { id } = req.params;
-        const { title, description, propertyType, location, price, photo } =
+        const { title, description, propertyType, photo } =
             req.body;
 
         const photoUrl = await cloudinary.uploader.upload(photo);
@@ -119,8 +115,6 @@ const updateProperty = async (req, res) => {
                 title,
                 description,
                 propertyType,
-                location,
-                price,
                 photo: photoUrl.url || photo,
             },
         );
