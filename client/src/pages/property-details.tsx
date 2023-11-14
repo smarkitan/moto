@@ -255,7 +255,7 @@ const PropertyDetails = () => {
                                 color="#11142D"
                             >
                                 {propertyDetails.creator.allProperties.length}{" "}
-                                Properties
+                                Pictures
                             </Typography>
                         </Stack>
 

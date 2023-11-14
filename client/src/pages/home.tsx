@@ -19,7 +19,7 @@ const home = () => {
        
     </Typography>
     <Typography fontSize={25} fontWeight={700} color="#11142d">
-                I'm passionate about motorcycles.
+                My hobby.
                 </Typography>
     <Box mt="20px" display="flex" flexWrap="wrap" gap={4}>
 
