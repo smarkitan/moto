@@ -272,7 +272,7 @@ export const Sider: typeof DefaultSider = ({ render }) => {
                         <Dashboard />
                     </ListItemIcon>
                     <ListItemText
-                        primary={translate("dashboard.title", "Home")}
+                        primary={translate("dashboard.title", "Dashboard")}
                         primaryTypographyProps={{
                             noWrap: true,
                             fontSize: "16px",

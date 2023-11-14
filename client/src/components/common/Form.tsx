@@ -24,7 +24,7 @@ const Form = ({
     return (
         <Box>
             <Typography fontSize={25} fontWeight={700} color="#11142d">
-                {type} a moto
+                {type} a Property
             </Typography>
 
             <Box mt={2.5} borderRadius="15px" padding="20px" bgcolor="#fcfcfc">
@@ -47,7 +47,7 @@ const Form = ({
                                 color: "#11142d",
                             }}
                         >
-                            Enter Moto Name
+                            Enter property name
                         </FormHelperText>
                         <TextField
                             fullWidth
@@ -97,7 +97,7 @@ const Form = ({
                                     color: "#11142d",
                                 }}
                             >
-                                Select Moto Type
+                                Select Property Type
                             </FormHelperText>
                             <Select
                                 variant="outlined"
@@ -105,22 +105,61 @@ const Form = ({
                                 displayEmpty
                                 required
                                 inputProps={{ "aria-label": "Without label" }}
-                                defaultValue="Other"
+                                defaultValue="apartment"
                                 {...register("propertyType", {
                                     required: true,
                                 })}
                             >
-                                <MenuItem value="HD">Harley Davidson</MenuItem>
-                                <MenuItem value="Honda">Honda</MenuItem>
-                                <MenuItem value="Kawasaki">Kawasaki</MenuItem>
-                                <MenuItem value="Other">Other</MenuItem>              
+                                <MenuItem value="HQ">HQ</MenuItem>
+                                <MenuItem value="Technical building">Technical building</MenuItem>
+                                <MenuItem value="Warehouse">Warehouse</MenuItem>
+                                <MenuItem value="Shop">Shop</MenuItem>              
 
                             </Select>
                         </FormControl>
-
+                        <FormControl>
+                            <FormHelperText
+                                sx={{
+                                    fontWeight: 500,
+                                    margin: "10px 0",
+                                    fontSize: 16,
+                                    color: "#11142d",
+                                }}
+                            >
+                                Enter property price
+                            </FormHelperText>
+                            <TextField
+                                fullWidth
+                                required
+                                id="outlined-basic"
+                                color="info"
+                                type="number"
+                                variant="outlined"
+                                {...register("price", { required: true })}
+                            />
+                        </FormControl>
                     </Stack>
 
-
+                    <FormControl>
+                        <FormHelperText
+                            sx={{
+                                fontWeight: 500,
+                                margin: "10px 0",
+                                fontSize: 16,
+                                color: "#11142d",
+                            }}
+                        >
+                            Enter Location
+                        </FormHelperText>
+                        <TextField
+                            fullWidth
+                            required
+                            id="outlined-basic"
+                            color="info"
+                            variant="outlined"
+                            {...register("location", { required: true })}
+                        />
+                    </FormControl>
 
                     <Stack
                         direction="column"
@@ -135,7 +174,7 @@ const Form = ({
                                 fontWeight={500}
                                 my="10px"
                             >
-                                Photo
+                                Property Photo
                             </Typography>
 
                             <Button

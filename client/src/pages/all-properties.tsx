@@ -58,8 +58,8 @@ const AllProperties = () => {
                 <Stack direction="column" width="100%">
                     <Typography fontSize={25} fontWeight={700} color="#11142d">
                         {!allProperties.length
-                            ? "There are no motorcycles"
-                            : "My motorcycles"}
+                            ? "There are no properties"
+                            : "All Properties"}
                     </Typography>
                     <Box
                         mb={2}
@@ -75,7 +75,14 @@ const AllProperties = () => {
                             flexWrap="wrap"
                             mb={{ xs: "20px", sm: 0 }}
                         >
-
+                            <CustomButton
+                                title={`Sort price ${
+                                    currentPrice === "asc" ? "↑" : "↓"
+                                }`}
+                                handleClick={() => toggleSort("price")}
+                                backgroundColor="#475be8"
+                                color="#fcfcfc"
+                            />
                             <TextField
                                 variant="outlined"
                                 color="info"
@@ -116,10 +123,10 @@ const AllProperties = () => {
                             >
                                 <MenuItem value="">All</MenuItem>
                                 {[
-                                    "Harley Davidson",
-                                    "Honda",
-                                    "Kawasaki",
-                                    "Other",
+                                    "HQ",
+                                    "Technical building",
+                                    "Warehouse",
+                                    "Shop",
                                  //   "Apartment",
                                  //   "Villa",
                                  //   "Farmhouse",
@@ -148,7 +155,7 @@ const AllProperties = () => {
                 alignItems="center"
             >
                 <CustomButton
-                    title="Add Motorcycle"
+                    title="Add Property"
                     handleClick={() => navigate("/properties/create")}
                     backgroundColor="#475be8"
                     color="#fcfcfc"
