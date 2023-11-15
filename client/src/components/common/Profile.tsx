@@ -8,6 +8,8 @@ import Typography from "@mui/material/Typography";
 import { ProfileProps, PropertyProps } from "interfaces/common";
 import PropertyCard from "./PropertyCard";
 
+
+
 function checkImage(url: any) {
     const img = new Image();
     img.src = url;

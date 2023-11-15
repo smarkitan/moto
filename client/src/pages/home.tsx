@@ -1,17 +1,8 @@
-
-import { useList } from "@refinedev/core";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 
-import {yariga} from "../assets";
-import {
-  PieChart,
-  PropertyReferrals,
-  TotalRevenue,
-  PropertyCard,
-} from "components";
-
+import {hdlogo} from "../assets";
 
 const home = () => {
   return (
@@ -22,20 +13,19 @@ const home = () => {
     <Typography fontSize={25} fontWeight={700} color="#11142d">
                 My passion
                 </Typography>
-    <Box mt="20px" display="flex" flexWrap="wrap" gap={4}>
-    <div style={{ maxWidth: '400px', maxHeight: '400px' }}>
-    <img src={yariga} alt="Yariga Logo" style={{ maxWidth: '100%', maxHeight: '100%' }} />
-  </div>
-    </Box>
+
     <Stack
                 mt="25px"
                 width="100%"
                 direction={{ xs: "column", lg: "row" }}
                 gap={4}
             >
-                <TotalRevenue />
-                <PropertyReferrals />
-            </Stack>
+            <Box mt="20px" display="flex" flexWrap="wrap" gap={4}>
+              <div style={{ maxWidth: '200px', maxHeight: '200px' }}>
+              <img src={hdlogo} alt="HD Logo" style={{ maxWidth: '100%', maxHeight: '100%' }} />
+              </div>
+              </Box>
+       </Stack>
     </Box>
   )
 }

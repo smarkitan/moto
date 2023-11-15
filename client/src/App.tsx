@@ -14,13 +14,13 @@ import {
 } from "@refinedev/mui";
 import CssBaseline from "@mui/material/CssBaseline";
 import GlobalStyles from "@mui/material/GlobalStyles";
-import AccountCircleOutlined from "@mui/icons-material/AccountCircleOutlined";
-import ChatBubbleOutline from "@mui/icons-material/ChatBubbleOutline";
-import CorporateFareOutlined from "@mui/icons-material/CorporateFareOutlined";
-import PeopleAltOutlined from "@mui/icons-material/PeopleAltOutlined";
-import StarOutlineRounded from "@mui/icons-material/StarOutlineRounded";
-import StorefrontOutlinedIcon from '@mui/icons-material/StorefrontOutlined';
-import VillaOutlined from "@mui/icons-material/VillaOutlined";
+//import AccountCircleOutlined from "@mui/icons-material/AccountCircleOutlined";
+//import ChatBubbleOutline from "@mui/icons-material/ChatBubbleOutline";
+//import CorporateFareOutlined from "@mui/icons-material/CorporateFareOutlined";
+//import PeopleAltOutlined from "@mui/icons-material/PeopleAltOutlined";
+//import StarOutlineRounded from "@mui/icons-material/StarOutlineRounded";
+//import StorefrontOutlinedIcon from '@mui/icons-material/StorefrontOutlined';
+//import VillaOutlined from "@mui/icons-material/VillaOutlined";
 import TwoWheelerOutlinedIcon from '@mui/icons-material/TwoWheelerOutlined';
 import SportsMotorsportsOutlinedIcon from '@mui/icons-material/SportsMotorsportsOutlined';
 import DevicesOutlinedIcon from '@mui/icons-material/DevicesOutlined';
@@ -65,42 +65,87 @@ axiosInstance.interceptors.request.use((request: AxiosRequestConfig) => {
 
 function App() {
     const authProvider: AuthProvider = {
-        login: async ({ credential }: CredentialResponse) => {
+    //    login: async ({ credential }: CredentialResponse) => {
+    //        const profileObj = credential ? parseJwt(credential) : null;
+
+    //        if (profileObj) {
+    //            const response = await fetch(
+    //                "https://dashed.onrender.com/api/v1/users",
+    //                {
+    //                    method: "POST",
+    //                    headers: { "Content-Type": "application/json" },
+    //                    body: JSON.stringify({
+   //                         name: profileObj.name,
+    //                        email: profileObj.email,
+    //                        avatar: profileObj.picture,
+    //                    }),
+    //                },
+    //            );
+
+    //            const data = await response.json();
+
+    //            if (response.status === 200) {
+    //                localStorage.setItem(
+    //                    "user",
+    //                    JSON.stringify({
+    //                        ...profileObj,
+    //                        avatar: profileObj.picture,
+    //                        userid: data._id,
+    //                    }),
+    //                );
+    //            } else {
+    //                return Promise.reject();
+    //            }
+    //        }
+    //        localStorage.setItem("token", `${credential}`);
+
+    //        return Promise.resolve();
+    //    },
+    login: async ({ credential }: CredentialResponse) => {
+        try {
             const profileObj = credential ? parseJwt(credential) : null;
-
-            if (profileObj) {
-                const response = await fetch(
-                    "https://dashed.onrender.com/api/v1/users",
-                    {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({
-                            name: profileObj.name,
-                            email: profileObj.email,
-                            avatar: profileObj.picture,
-                        }),
-                    },
-                );
-
-                const data = await response.json();
-
-                if (response.status === 200) {
-                    localStorage.setItem(
-                        "user",
-                        JSON.stringify({
-                            ...profileObj,
-                            avatar: profileObj.picture,
-                            userid: data._id,
-                        }),
-                    );
+    
+            if (!profileObj) {
+                throw new Error('Invalid credential format.');
+            }
+    
+            const response = await fetch("https://dashed.onrender.com/api/v1/users", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name: profileObj.name,
+                    email: profileObj.email,
+                    avatar: profileObj.picture,
+                }),
+            });
+    
+            if (!response.ok) {
+                if (response.status === 401) {
+                    throw new Error('Unauthorized: Invalid credentials.');
                 } else {
-                    return Promise.reject();
+                    throw new Error('Server error: Please try again later.');
                 }
             }
+    
+            const data = await response.json();
+    
+            localStorage.setItem(
+                "user",
+                JSON.stringify({
+                    ...profileObj,
+                    avatar: profileObj.picture,
+                    userid: data._id,
+                }),
+            );
+    
             localStorage.setItem("token", `${credential}`);
-
             return Promise.resolve();
-        },
+        } catch (error) {
+            console.error('Login failed:', error);
+            return Promise.reject('Login failed: Please try again.');
+        }
+    },
+    
         logout: () => {
             const token = localStorage.getItem("token");
 
@@ -114,6 +159,7 @@ function App() {
             }
 
             return Promise.resolve();
+            
         },
         checkError: () => Promise.resolve(),
         checkAuth: async () => {

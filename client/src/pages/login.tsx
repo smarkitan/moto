@@ -3,7 +3,7 @@ import { useLogin } from "@refinedev/core";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 
-import { yariga } from "../assets";
+import { hdlogo } from "../assets";
 
 import { CredentialResponse } from "../interfaces/google";
 
@@ -42,8 +42,8 @@ export const Login: React.FC = () => {
             } catch (error) {
                 console.log(error);
             }
-        }, [process.env.REACT_APP_GOOGLE_CLIENT_ID, window.google, divRef.current]); // you can also add your client id as dependency here
-
+      //  }, [process.env.REACT_APP_GOOGLE_CLIENT_ID, window.google, divRef.current]); // you can also add your client id as dependency here
+    }, []); // you can also add your client id as dependency here
         return <div ref={divRef} />;
     };
 
@@ -67,9 +67,12 @@ export const Login: React.FC = () => {
                         alignItems: "center",
                     }}
                 >
-                    <div>
-                        <img src={yariga} alt="Yariga Logo" />
-                    </div>
+                  
+              <div style={{ maxWidth: '200px', maxHeight: '200px' }}>
+              <img src={hdlogo} alt="HD Logo" style={{ maxWidth: '100%', maxHeight: '100%' }} />
+              </div>
+     
+                    
                     <Box mt={4}>
                         <GoogleButton />
                     </Box>
